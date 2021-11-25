@@ -11,10 +11,10 @@ class FormReviewsHandlerPg implements IFormReviewsHandler
     {
         $this->formReview = $formReview;
     }
-    public function saveResult(array $fields):object
+    public function saveResult(array $fields):array
     {
         return $this->formReview->create(
             $fields
-        );
+        )->getOriginal();
     }
 }
